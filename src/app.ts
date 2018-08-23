@@ -61,14 +61,14 @@ for(let i = 0; i < secondOptions.length; i++) {
 }​
 
 function getSelectedCourse(){
-    let course = document.getElementById("optionsCourses");
+    let course:HTMLSelectElement = <HTMLSelectElement> document.getElementById("optionsCourses");
     let name = course.options[course.selectedIndex].value;
     return courseService.getAll().filter(course => course.name === name)[0];
 }
 
 
 function getSelectedTeacher(){
-    let teacher = document.getElementById("optionsTeachers");
+    let teacher = <HTMLSelectElement> document.getElementById("optionsTeachers");
     let students = document.getElementById("students");
     while (students.firstChild) {
         students.removeChild(students.firstChild);
